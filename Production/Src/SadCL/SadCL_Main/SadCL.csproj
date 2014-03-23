@@ -46,14 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoordConvert.cs" />
-    <Compile Include="TargetManager\IniBuilder.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="MissileLauncher\DreamCheekyLauncher.cs" />
     <Compile Include="MissileLauncher\IMissileLauncher.cs" />
+    <Compile Include="TargetManager\IniBuilder.cs" />
     <Compile Include="MissileLauncher\MissileLauncherController.cs" />
-    <Compile Include="MissileLauncher\MissileLauncherHardware.cs" />
     <Compile Include="MissileLauncher\MissileLauncherFactory.cs" />
+    <Compile Include="MissileLauncher\MissileLauncherHardware.cs" />
     <Compile Include="MissileLauncher\MockLauncher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

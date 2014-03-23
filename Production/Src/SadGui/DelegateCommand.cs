@@ -5,26 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SadGui
+namespace SadCLGUI
 {
-	public class DelegateCommand : ICommand
-	{
+    public class DelegateCommand : ICommand
+    {
+        public event EventHandler CanExecuteChanged;
 
-		public event EventHandler CanExecuteChanged;
-		private bool m_canExecute;
-		private Action m_action;
+        private Action m_action;
+        private bool m_canExecute;
 
-		public DelegateCommand(Action actionToTake) {
-			m_canExecute = true;
-			m_action     = actionToTake;
-		}
+        public DelegateCommand(Action actionToTake) {
+            m_canExecute = true;
+            m_action = actionToTake;
+        }
+        public bool CanExecute(object parameter) {
+            return m_canExecute;
+        }
 
-		public bool CanExecute(object parameter) {
-			return m_canExecute;
-		}
-
-		public void Execute(object parameter) {
-			m_action();
-		}
-	}
+        public void Execute(object parameter) {
+            m_action();
+        }
+    }
 }
