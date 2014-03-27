@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SadCL.MissileLauncher;
+using SadCLGUI.ViewModels;
 
 namespace SadCLGUI.GUI_ViewModels
 {
@@ -13,10 +14,33 @@ namespace SadCLGUI.GUI_ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private MissileControlViewModel m_selectedLauncher;
+        private MenuBarViewModel menubar;
+        private TargetBriefListViewModel brieflist;
 
-        public MainWindowViewModel(IMissileLauncher launcher) {
-            MissileTurret = new MissileControlViewModel(launcher);
+        public MainWindowViewModel(List<Target.Target> RawList) {
+            MissileTurret = new MissileControlViewModel();
+            BriefList = new TargetBriefListViewModel(RawList);
+            MenuBar = new MenuBarViewModel();
         }
+
+        public MenuBarViewModel MenuBar {
+            get {
+                return menubar;
+            }
+
+            private set {
+                menubar = value;
+            }
+        }
+
+        public TargetBriefListViewModel BriefList {
+            get {
+                return brieflist;
+            }
+            set {
+                brieflist = value;
+            }
+        } 
 
         public MissileControlViewModel MissileTurret
         {

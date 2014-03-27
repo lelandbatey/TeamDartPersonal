@@ -18,9 +18,12 @@ namespace SadCLGUI
         private void Application_Startup(object sender, StartupEventArgs e) {
             MainWindow window = new MainWindow();
 
-            IMissileLauncher launcher = MissileLauncherFactory.create_Launcher(LauncherTypes.DreamCheeky);
+            string FilePath = "C:\\Users\\jason_000\\Dropbox\\cs323\\jason_323.team.dart.git\\Production\\Src\\SadCL\\SadCL_Main\\SadCL_UnitTests\\TestData\\validTargets.ini";
 
-            MainWindowViewModel viewModel = new MainWindowViewModel(launcher);
+            List<Target.Target> RawList = Target.TargetFactory.BuildTargetList(FilePath);
+
+
+            MainWindowViewModel viewModel = new MainWindowViewModel(RawList);
 
             window.DataContext = viewModel;
             window.ShowDialog();

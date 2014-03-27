@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using SadCL.MissileLauncher;
 
-namespace SadCLGUI
+namespace SadCLGUI.ViewModels
 {
     class MissileControlViewModel
     {
-        private IMissileLauncher m_launcher;
+        private MissileLauncherController m_launcher = new MissileLauncherController();
 
         private int distance = 50;
 
-        public MissileControlViewModel(IMissileLauncher launcher)
+        public MissileControlViewModel()
         {
-            m_launcher = launcher;
             FireCommand = new DelegateCommand(Fire);
             LeftCommand = new DelegateCommand(moveLeft);
             RightCommand = new DelegateCommand(moveRight);
             UpCommand = new DelegateCommand(moveUp);
             DownCommand = new DelegateCommand(moveDown);
+            KillCommand = new DelegateCommand(kill);
         }
 
         public void Fire() {
@@ -40,10 +40,15 @@ namespace SadCLGUI
             m_launcher.moveBy(0, -distance);
         }
 
+        public void kill() {
+
+        }
+
         public ICommand FireCommand { get; set; }
         public ICommand LeftCommand { get; set; }
         public ICommand RightCommand { get; set; }
         public ICommand UpCommand { get; set; }
         public ICommand DownCommand { get; set; }
+        public ICommand KillCommand { get; set; }
     }
 }

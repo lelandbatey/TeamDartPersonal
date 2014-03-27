@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SadCLGUI.GUI_Windows.LauncherControls"
+﻿<UserControl x:Class="SadCLGUI.GUI_Views.LauncherControls"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -57,6 +57,14 @@
             Command="{Binding Path=DownCommand}"
             >
             Down
+        </Button>
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="5"
+            Command="{Binding Path=KillCommand}"
+            >
+            Kill
         </Button>
     </Grid>
 </UserControl>

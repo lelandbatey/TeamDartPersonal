@@ -59,6 +59,9 @@
     </ApplicationDefinition>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="GUI ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="GUI ViewModels\MenuBarViewModel.cs" />
+    <Compile Include="GUI ViewModels\TargetBriefListViewModel.cs" />
+    <Compile Include="GUI ViewModels\TargetViewModel.cs" />
     <Compile Include="GUI Views\LauncherControls.xaml.cs">
       <DependentUpon>LauncherControls.xaml</DependentUpon>
     </Compile>
@@ -80,8 +83,29 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="GUI Views\MenuBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI Views\TargetBriefList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI Views\TargetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI Views\MenuBar.xaml.cs">
+      <DependentUpon>MenuBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Views\TargetBriefList.xaml.cs">
+      <DependentUpon>TargetBriefList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI Views\TargetView.xaml.cs">
+      <DependentUpon>TargetView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

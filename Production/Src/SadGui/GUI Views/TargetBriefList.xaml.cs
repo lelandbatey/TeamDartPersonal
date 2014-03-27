@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SadCLGUI.GUI_Views
 {
     /// <summary>
-    /// Interaction logic for LauncherControls.xaml
+    /// Interaction logic for TargetBriefList.xaml
     /// </summary>
-    public partial class LauncherControls : UserControl
+    public partial class TargetBriefList : UserControl
     {
-        public LauncherControls() {
+        public TargetBriefList() {
             InitializeComponent();
         }
     }
