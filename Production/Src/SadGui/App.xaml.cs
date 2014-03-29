@@ -18,7 +18,8 @@ namespace SadCLGUI
         private void Application_Startup(object sender, StartupEventArgs e) {
             MainWindow window = new MainWindow();
 
-            string FilePath = "C:\\Users\\jason_000\\Dropbox\\cs323\\jason_323.team.dart.git\\Production\\Src\\SadCL\\SadCL_Main\\SadCL_UnitTests\\TestData\\validTargets.ini";
+			// Here we use a relative path for cross-platform compatibilty, as well as the '@' symbol so we don't have to escape our slashes
+            string FilePath = @"..\..\..\SadCL\SadCL_Main\SadCL_UnitTests\TestData\targets.ini";
 
             List<Target.Target> RawList = Target.TargetFactory.BuildTargetList(FilePath);
 
